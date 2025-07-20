@@ -1,25 +1,11 @@
 using UnityEngine;
 
-public class BaseCard : MonoBehaviour
+[CreateAssetMenu(fileName = "SpellName", menuName = "Create Card")]
+public class BaseCard : ScriptableObject
 {
-    protected int cardCost;
-    protected int damage;
+    public int cardCost;
+    public int damageAmount;
+    public bool isCombined;
 
-    protected bool isCombined;
-
-    public bool IsCardCombined()
-    {
-        return isCombined;
-    }
-
-    public int GetCardCost()
-    {
-        return cardCost;
-    }
-
-    public int GetDamageAmount()
-    {
-        return damage;
-    }
-    
+    public string cardName;
 }
