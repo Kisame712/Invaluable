@@ -6,4 +6,9 @@ public class RestAction : BaseAction
     {
         return "REST";
     }
+
+    public override void TakeAction()
+    {
+        Debug.Log("Taking Rest Action");
+    }
 }
