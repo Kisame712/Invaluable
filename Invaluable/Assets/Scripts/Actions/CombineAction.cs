@@ -8,4 +8,8 @@ public class CombineAction : BaseAction
         return "COMBINE";
     }
 
+    public override void TakeAction()
+    {
+        Debug.Log("Taking Combine Action");
+    }
 }

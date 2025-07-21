@@ -32,4 +32,5 @@ public class ResourceManager : MonoBehaviour
     {
         return allCards.Length;
     }
+
 }
