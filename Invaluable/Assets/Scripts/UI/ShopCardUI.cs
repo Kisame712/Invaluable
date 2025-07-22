@@ -7,23 +7,28 @@ public class ShopCardUI : MonoBehaviour
     [SerializeField] private TMP_Text cardNameUI;
     [SerializeField] private TMP_Text cardCostUI;
     public static event EventHandler OnAnyButtonClicked;
-
+    private BaseCard baseCard;
     private Button button;
     private void Awake()
     {
         button = GetComponent<Button>();
     }
-    public void SetCardInfo(string cardName, int cardCost)
+    public void SetCardInfo(BaseCard baseCard)
     {
-        cardNameUI.text = cardName;
-        cardCostUI.text = cardCost.ToString();
+        cardNameUI.text = baseCard.cardName;
+        cardCostUI.text = baseCard.cardCost.ToString();
+        this.baseCard = baseCard;
     }
 
-    private void Update()
+    private void Start()
     {
         button.onClick.AddListener(() =>
         {
-            OnAnyButtonClicked?.Invoke(this, EventArgs.Empty);
+            if (baseCard != null)
+            {
+                PlayerCardManager.Instance.AddPlayerCard(baseCard.cardName);
+                OnAnyButtonClicked?.Invoke(this, EventArgs.Empty);
+            }
         });
     }
 }

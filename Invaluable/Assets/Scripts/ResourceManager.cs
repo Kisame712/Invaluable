@@ -28,6 +28,18 @@ public class ResourceManager : MonoBehaviour
         };
     }
 
+    public BaseCard GetCardThroughName(string cardName)
+    {
+       foreach(BaseCard baseCard in allCards)
+        {
+            if(cardName == baseCard.cardName)
+            {
+                return baseCard;
+            }
+        }
+        return null;
+    }
+
     public int GetTotalLength()
     {
         return allCards.Length;
