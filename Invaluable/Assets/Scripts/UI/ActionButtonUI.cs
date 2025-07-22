@@ -13,7 +13,7 @@ public class ActionButtonUI : MonoBehaviour
         actionName.text = baseAction.GetActionName().ToUpper();
     }
 
-    public void Update()
+    private void Start()
     {
         button.onClick.AddListener(() =>
         {

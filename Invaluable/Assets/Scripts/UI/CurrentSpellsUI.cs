@@ -16,10 +16,10 @@ public class CurrentSpellsUI : MonoBehaviour
 
     private void UpdateCurrentPlayerCards()
     {
-        Dictionary<BaseCard, int> playerBaseCardMap = PlayerCardManager.Instance.GetPlayerCards();
-        foreach (KeyValuePair<BaseCard, int> item in playerBaseCardMap)
+        Dictionary<string, int> playerBaseCardMap = PlayerCardManager.Instance.GetPlayerCards();
+        foreach (KeyValuePair<string, int> item in playerBaseCardMap)
         {
-            BaseCard baseCard = item.Key;
+            BaseCard baseCard = PlayerCardManager.Instance.GetBaseCard(item.Key);
             int cardCount = item.Value;
             if (cardCount != 0)
             {
@@ -33,6 +33,15 @@ public class CurrentSpellsUI : MonoBehaviour
 
     private void SpellCardUI_OnAnyButtonClicked(object sender, EventArgs e)
     {
+        ClearCards();
         UpdateCurrentPlayerCards();
+    }
+
+    private void ClearCards()
+    {
+       foreach(Transform transform in spellCardHolder)
+        {
+            Destroy(transform.gameObject);
+        }
     }
 }

@@ -5,9 +5,9 @@ public class PlayerCardManager : MonoBehaviour
 {
     public static PlayerCardManager Instance { private set; get; }
 
-    private Dictionary<BaseCard, int> playerCards = new Dictionary<BaseCard, int>();
+    private Dictionary<string, int> playerCards = new Dictionary<string, int>();
 
-    [SerializeField] private BaseCard[] initalCards;
+    [SerializeField] private List<BaseCard> initalCards;
     [SerializeField] private int initialCardCounts;
 
     private void Awake()
@@ -26,21 +26,30 @@ public class PlayerCardManager : MonoBehaviour
         MakePlayerCardDictionary();
     }
 
-    public Dictionary<BaseCard, int> GetPlayerCards()
+    public Dictionary<string, int> GetPlayerCards()
     {
         return playerCards;
     }
 
-    public void AddPlayerCard(BaseCard baseCard)
+    public void AddPlayerCard(string baseCard)
     {
-        playerCards[baseCard]++;
+        if (playerCards.ContainsKey(baseCard))
+        {
+            playerCards[baseCard]++;
+        }
+        else
+        {
+            playerCards.Add(baseCard, 1);
+            BaseCard cardToAdd = ResourceManager.Instance.GetCardThroughName(baseCard);
+            initalCards.Add(cardToAdd);    
+        }
     }
-    public void PlayerCardUsed(BaseCard baseCard)
+    public void PlayerCardUsed(string baseCard)
     {
         playerCards[baseCard]--;
     }
     
-    public bool CanUsePlayerCard(BaseCard baseCard)
+    public bool CanUsePlayerCard(string baseCard)
     {
         if (playerCards[baseCard] > 0)
         {
@@ -53,7 +62,19 @@ public class PlayerCardManager : MonoBehaviour
     {
         foreach(BaseCard baseCard in initalCards)
         {
-            playerCards.Add(baseCard, initialCardCounts);
+            playerCards.Add(baseCard.cardName, initialCardCounts);
         }
+    }
+
+    public BaseCard GetBaseCard(string cardName)
+    {
+        foreach(BaseCard baseCard in initalCards)
+        {
+            if(baseCard.cardName == cardName)
+            {
+                return baseCard;
+            }
+        }
+        return null;
     }
 }

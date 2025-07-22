@@ -14,7 +14,7 @@ public class CardHolderUI : MonoBehaviour
             {
                 Transform cardPrefabTransform = Instantiate(cardUIPrefab, cardHolderParent);
                 ShopCardUI shopCardUI = cardPrefabTransform.GetComponent<ShopCardUI>();
-                shopCardUI.SetCardInfo(baseCard.cardName, baseCard.cardCost);
+                shopCardUI.SetCardInfo(baseCard);
             }
 
         }
