@@ -5,12 +5,14 @@ public class Player : MonoBehaviour
     private UseSpellAction useSpellAction;
     private SpellUsedAction spellUsedAction;
     private BaseAction[] baseActionArray;
+    private Animator animator;
 
     private void Awake()
     {
         useSpellAction = GetComponent<UseSpellAction>();
         baseActionArray = GetComponents<BaseAction>();
         spellUsedAction = GetComponent<SpellUsedAction>();
+        animator = GetComponent<Animator>();
     }
 
 
@@ -29,8 +31,17 @@ public class Player : MonoBehaviour
         return spellUsedAction;
     }
 
-    public void PlaySpellAnimations()
+    public void PlaySpellAnimations(BaseCard baseCard)
     {
-        Debug.Log("Playing card animation");
+        switch (baseCard.cardName)
+        {
+            case "Fire Ball":
+                animator.SetTrigger("Fire Ball");
+                break;
+            case "Fire Shower":
+                animator.SetTrigger("Fire Shower");
+                break;
+        }
+ 
     }
 }

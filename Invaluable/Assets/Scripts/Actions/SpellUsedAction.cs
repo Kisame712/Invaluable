@@ -26,7 +26,7 @@ public class SpellUsedAction : BaseAction
     {
         PlayerCardManager.Instance.PlayerCardUsed(baseCard.cardName);
         spellMenu.SetActive(false);
-        player.PlaySpellAnimations();
+        player.PlaySpellAnimations(baseCard);
         ResetUI();
 
     }

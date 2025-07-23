@@ -101,6 +101,7 @@ GameObject:
   - component: {fileID: 1638869753517922173}
   - component: {fileID: 7156128350058657790}
   - component: {fileID: 7322517566467200410}
+  - component: {fileID: 8226817001757041144}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -190,6 +191,28 @@ MonoBehaviour:
   spellMenu: {fileID: 0}
   buySpellsButton: {fileID: 0}
   playerActionSystemUI: {fileID: 0}
+--- !u!95 &8226817001757041144
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339422758436570964}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88b0be9f84f726e47868b4629cf2ab59, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3888961742600658276
 GameObject:
   m_ObjectHideFlags: 0
