@@ -10,6 +10,7 @@ public class CurrentSpellsUI : MonoBehaviour
     private void Start()
     {
         ShopCardUI.OnAnyButtonClicked += SpellCardUI_OnAnyButtonClicked;
+        SpellCardUI.OnAnySpellButtonClicked += SpellCardUI_OnAnySpellButtonClicked;
 
         UpdateCurrentPlayerCards();
     }
@@ -25,13 +26,19 @@ public class CurrentSpellsUI : MonoBehaviour
             {
                 Transform cardPrefabTransform = Instantiate(spellUIPrefab, spellCardHolder);
                 SpellCardUI spellCard = cardPrefabTransform.GetComponent<SpellCardUI>();
-                spellCard.SetCardInfo(baseCard.cardName, baseCard.damageAmount, cardCount);
+                spellCard.SetCardInfo(baseCard, cardCount);
             }
 
         }
     }
 
     private void SpellCardUI_OnAnyButtonClicked(object sender, EventArgs e)
+    {
+        ClearCards();
+        UpdateCurrentPlayerCards();
+    }
+
+    private void SpellCardUI_OnAnySpellButtonClicked(object sender, EventArgs e)
     {
         ClearCards();
         UpdateCurrentPlayerCards();
