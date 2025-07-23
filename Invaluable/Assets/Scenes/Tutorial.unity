@@ -2897,6 +2897,18 @@ PrefabInstance:
       propertyPath: playerActionsUI
       value: 
       objectReference: {fileID: 603877917}
+    - target: {fileID: 7322517566467200410, guid: 9fa54de36eeb530488fa168ba438b16c, type: 3}
+      propertyPath: spellMenu
+      value: 
+      objectReference: {fileID: 556333406}
+    - target: {fileID: 7322517566467200410, guid: 9fa54de36eeb530488fa168ba438b16c, type: 3}
+      propertyPath: buySpellsButton
+      value: 
+      objectReference: {fileID: 1870590679}
+    - target: {fileID: 7322517566467200410, guid: 9fa54de36eeb530488fa168ba438b16c, type: 3}
+      propertyPath: playerActionSystemUI
+      value: 
+      objectReference: {fileID: 603877917}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

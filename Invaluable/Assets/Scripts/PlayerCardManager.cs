@@ -47,16 +47,13 @@ public class PlayerCardManager : MonoBehaviour
     public void PlayerCardUsed(string baseCard)
     {
         playerCards[baseCard]--;
+        if (playerCards[baseCard] == 0)
+        {
+            playerCards.Remove(baseCard);
+        }
+
     }
     
-    public bool CanUsePlayerCard(string baseCard)
-    {
-        if (playerCards[baseCard] > 0)
-        {
-            return true;
-        }
-        return false;
-    }
 
     private void MakePlayerCardDictionary()
     {

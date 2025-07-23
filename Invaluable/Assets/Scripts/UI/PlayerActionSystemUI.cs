@@ -16,6 +16,10 @@ public class PlayerActionSystemUI : MonoBehaviour
 
         foreach(BaseAction baseAction in player.GetBaseActions())
         {
+            if(baseAction.IsActionToBeDisplayed() == false)
+            {
+                continue;
+            }
             Transform actionButtonTransform = Instantiate(actionButtonPrefab, actionButtonContainer);
             ActionButtonUI actionButton = actionButtonTransform.GetComponent<ActionButtonUI>();
             actionButton.SetActionName(baseAction);

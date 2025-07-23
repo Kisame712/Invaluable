@@ -100,6 +100,7 @@ GameObject:
   - component: {fileID: 4635909466594120308}
   - component: {fileID: 1638869753517922173}
   - component: {fileID: 7156128350058657790}
+  - component: {fileID: 7322517566467200410}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -174,6 +175,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1488496033c9a8a488c1237e1e52f8d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7322517566467200410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2339422758436570964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96f1cc918195a5409da45112b37e399, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spellMenu: {fileID: 0}
+  buySpellsButton: {fileID: 0}
+  playerActionSystemUI: {fileID: 0}
 --- !u!1 &3888961742600658276
 GameObject:
   m_ObjectHideFlags: 0
