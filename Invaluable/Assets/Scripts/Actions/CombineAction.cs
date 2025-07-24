@@ -2,6 +2,9 @@ using UnityEngine;
 using System;
 public class CombineAction : BaseAction
 {
+    [SerializeField] private GameObject combineSpellsMenu;
+    [SerializeField] private GameObject buySpellsButton;
+    [SerializeField] private GameObject playerActionSystemUI;
     protected override void Awake()
     {
         base.Awake();
@@ -16,6 +19,8 @@ public class CombineAction : BaseAction
     public override void TakeAction(Action onActionComplete)
     {
         this.onActionComplete = onActionComplete;
-        Debug.Log("Taking Combine Action");
+        playerActionSystemUI.SetActive(false);
+        buySpellsButton.SetActive(false);
+        combineSpellsMenu.SetActive(true);
     }
 }
