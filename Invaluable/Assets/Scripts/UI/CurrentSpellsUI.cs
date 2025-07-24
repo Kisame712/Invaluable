@@ -9,8 +9,9 @@ public class CurrentSpellsUI : MonoBehaviour
 
     private void Start()
     {
-        ShopCardUI.OnAnyButtonClicked += SpellCardUI_OnAnyButtonClicked;
+        ShopCardUI.OnAnyButtonClicked += ShopCardUI_OnAnyButtonClicked;
         SpellCardUI.OnAnySpellButtonClicked += SpellCardUI_OnAnySpellButtonClicked;
+        CombineSpellsUI.OnCombineSpell += CombineSpellsUI_OnCombineSpell;
 
         UpdateCurrentPlayerCards();
     }
@@ -32,7 +33,7 @@ public class CurrentSpellsUI : MonoBehaviour
         }
     }
 
-    private void SpellCardUI_OnAnyButtonClicked(object sender, EventArgs e)
+    private void ShopCardUI_OnAnyButtonClicked(object sender, EventArgs e)
     {
         ClearCards();
         UpdateCurrentPlayerCards();
@@ -50,5 +51,11 @@ public class CurrentSpellsUI : MonoBehaviour
         {
             Destroy(transform.gameObject);
         }
+    }
+
+    private void CombineSpellsUI_OnCombineSpell(object sender, EventArgs e)
+    {
+        ClearCards();
+        UpdateCurrentPlayerCards();
     }
 }

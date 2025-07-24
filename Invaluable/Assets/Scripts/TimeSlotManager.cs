@@ -52,7 +52,6 @@ public class TimeSlotManager : MonoBehaviour
 
     private void ShopCardUI_OnAnyButtonClicked(object sender, EventArgs e)
     {
-        Debug.Log("shop button clicked!!");
         UpdatePlayerTimeSlots();
     }
 }
