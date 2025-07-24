@@ -20,15 +20,43 @@ public class ShopCardUI : MonoBehaviour
         this.baseCard = baseCard;
     }
 
+    public BaseCard GetBaseCard()
+    {
+        return baseCard;
+    }
+
     private void Start()
     {
-        button.onClick.AddListener(() =>
+        if(button.interactable == true)
         {
-            if (baseCard != null)
-            {
-                PlayerCardManager.Instance.AddPlayerCard(baseCard.cardName);
-                OnAnyButtonClicked?.Invoke(this, EventArgs.Empty);
-            }
-        });
+            button.onClick.AddListener(UpdateButtonStatus);
+        }
     }
+
+    public void SetButtonStatus()
+    {
+        if (baseCard != null)
+        {
+            if (TimeSlotManager.Instance.CanBuyCard(baseCard))
+            {
+                button.interactable = true;
+            }
+            else
+            {
+                button.interactable = false;
+            }
+
+        }
+    }
+    
+    private void UpdateButtonStatus()
+    {
+        if (baseCard != null && TimeSlotManager.Instance.CanBuyCard(baseCard))
+        {
+            PlayerCardManager.Instance.AddPlayerCard(baseCard.cardName);
+            TimeSlotManager.Instance.BoughtCard(baseCard.cardCost);
+            OnAnyButtonClicked?.Invoke(this, EventArgs.Empty);
+        }
+    }
+
 }
