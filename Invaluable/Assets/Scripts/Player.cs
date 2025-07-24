@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     private SpellUsedAction spellUsedAction;
     private BaseAction[] baseActionArray;
     private Animator animator;
+    private HealthSystem healthSystem;
 
     private void Awake()
     {
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
         baseActionArray = GetComponents<BaseAction>();
         spellUsedAction = GetComponent<SpellUsedAction>();
         animator = GetComponent<Animator>();
+        healthSystem = GetComponent<HealthSystem>();
     }
 
 
@@ -29,6 +31,11 @@ public class Player : MonoBehaviour
     public SpellUsedAction GetSpellUsedAction()
     {
         return spellUsedAction;
+    }
+
+    public HealthSystem GetHealthSystem()
+    {
+        return healthSystem;
     }
 
     public void PlaySpellAnimations(BaseCard baseCard)
