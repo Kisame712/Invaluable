@@ -41,6 +41,24 @@ public class Player : MonoBehaviour
             case "Fire Shower":
                 animator.SetTrigger("Fire Shower");
                 break;
+            case "Stone Shower":
+                animator.SetTrigger("Stone Shower");
+                break;
+            case "Freeze":
+                animator.SetTrigger("Freeze");
+                break;
+            case "Water Beam":
+                animator.SetTrigger("Water Beam");
+                break;
+            case "Ice Beam":
+                animator.SetTrigger("Ice Beam");
+                break;
+            case "Lightning":
+                animator.SetTrigger("Lightning");
+                break;
+            case "Moist Shock":
+                animator.SetTrigger("Moist Shock");
+                break;
         }
  
     }

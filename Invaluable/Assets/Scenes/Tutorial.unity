@@ -2897,6 +2897,14 @@ PrefabInstance:
       propertyPath: playerActionsUI
       value: 
       objectReference: {fileID: 603877917}
+    - target: {fileID: 5334461504322982796, guid: 9fa54de36eeb530488fa168ba438b16c, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5334461504322982796, guid: 9fa54de36eeb530488fa168ba438b16c, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7322517566467200410, guid: 9fa54de36eeb530488fa168ba438b16c, type: 3}
       propertyPath: spellMenu
       value: 
