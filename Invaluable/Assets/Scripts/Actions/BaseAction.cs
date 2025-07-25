@@ -4,12 +4,10 @@ using UnityEngine;
 
 public abstract class BaseAction : MonoBehaviour
 {
-    protected int actionPoints;
     protected bool isActive;
     protected Player player;
     protected bool actionToBeDisplayed;
 
-    public Action onActionComplete;
     protected virtual void Awake()
     {
         player = GetComponent<Player>();
@@ -17,7 +15,7 @@ public abstract class BaseAction : MonoBehaviour
 
     public abstract string GetActionName();
 
-    public abstract void TakeAction(Action onActionComplete);
+    public abstract void TakeAction();
 
     public bool IsActionToBeDisplayed()
     {

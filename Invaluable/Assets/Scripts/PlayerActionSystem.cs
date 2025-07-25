@@ -1,11 +1,13 @@
 using UnityEngine;
+using TMPro;
 public class PlayerActionSystem : MonoBehaviour
 {
     public static PlayerActionSystem Instance { private set; get; }
 
     [SerializeField] private Player player;
-
-    private bool isBusy;
+    [SerializeField] private int remainingActionPoints;
+    [SerializeField] private TMP_Text actionPointsText;
+    private int maxActionPoints;
 
     private void Awake()
     {
@@ -17,6 +19,12 @@ public class PlayerActionSystem : MonoBehaviour
         }
 
         Instance = this;
+        maxActionPoints = remainingActionPoints;
+    }
+
+    private void Start()
+    {
+        UpdateActionPoints();
     }
 
     public Player GetPlayer()
@@ -24,14 +32,21 @@ public class PlayerActionSystem : MonoBehaviour
         return player;
     }
 
-    public void SetBusy()
+    private void UpdateActionPoints()
     {
-        isBusy = true;
+        actionPointsText.text = $"Remaining actions : {remainingActionPoints}";
     }
 
-    public void ClearBusy()
+    public void ActionTaken()
     {
-        isBusy = false;
+        remainingActionPoints--;
+        UpdateActionPoints();
+    }
+
+    public void ResetActionPoints()
+    {
+        remainingActionPoints = maxActionPoints;
+        UpdateActionPoints();
     }
 
 }

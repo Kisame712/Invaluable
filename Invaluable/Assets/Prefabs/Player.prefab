@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9166112458767133905}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -45,7 +45,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6779389013890482190}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -78,7 +78,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2380263670143691802}
   - component: {fileID: 768386950438392216}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ GameObject:
   - component: {fileID: 7322517566467200410}
   - component: {fileID: 857195526144980234}
   - component: {fileID: 8226817001757041144}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -222,6 +222,7 @@ MonoBehaviour:
   spellMenu: {fileID: 0}
   playerActionsUI: {fileID: 0}
   shopButton: {fileID: 0}
+  endTurnButton: {fileID: 0}
 --- !u!114 &1638869753517922173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -237,6 +238,7 @@ MonoBehaviour:
   healthIncrease: {fileID: 0}
   playerActionsUI: {fileID: 0}
   buySpellsButton: {fileID: 0}
+  endTurnButton: {fileID: 0}
 --- !u!114 &7156128350058657790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,6 +254,7 @@ MonoBehaviour:
   combineSpellsMenu: {fileID: 0}
   buySpellsButton: {fileID: 0}
   playerActionSystemUI: {fileID: 0}
+  endTurnButton: {fileID: 0}
 --- !u!114 &7322517566467200410
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -267,6 +270,7 @@ MonoBehaviour:
   spellMenu: {fileID: 0}
   buySpellsButton: {fileID: 0}
   playerActionSystemUI: {fileID: 0}
+  endTurnButton: {fileID: 0}
 --- !u!114 &857195526144980234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313,7 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6539361441411976532}
   - component: {fileID: 1730394996224734513}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -401,7 +405,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3674028037047054958}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -439,7 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1080631253983593729}
   - component: {fileID: 354590401377869857}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -528,7 +532,7 @@ GameObject:
   - component: {fileID: 144345192351650330}
   - component: {fileID: 8854823542881018133}
   - component: {fileID: 7655456027617205485}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -628,7 +632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6134448233524139395}
   - component: {fileID: 6864181446628641643}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +719,7 @@ GameObject:
   m_Component:
   - component: {fileID: 178488603619573556}
   - component: {fileID: 2542545449614478720}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Staff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -803,7 +807,7 @@ GameObject:
   - component: {fileID: 5334461504322982796}
   - component: {fileID: 763261663739577832}
   - component: {fileID: 409712883129549368}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Fill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -878,7 +882,7 @@ GameObject:
   - component: {fileID: 7333618290699509838}
   - component: {fileID: 5922663354564895264}
   - component: {fileID: 3023501491520800310}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -952,7 +956,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4407486176309006535}
   - component: {fileID: 6834825754143548331}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Left Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1039,7 +1043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1361288676983540378}
   - component: {fileID: 3520791764989685014}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Right Leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}

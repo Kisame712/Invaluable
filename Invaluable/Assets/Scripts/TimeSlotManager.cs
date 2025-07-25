@@ -54,4 +54,5 @@ public class TimeSlotManager : MonoBehaviour
     {
         UpdatePlayerTimeSlots();
     }
+
 }
