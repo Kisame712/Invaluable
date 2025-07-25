@@ -30,10 +30,8 @@ public class SpellCardUI : MonoBehaviour
         {
             if (baseCard != null)
             {
-                PlayerActionSystem.Instance.SetBusy();
                 Player player = PlayerActionSystem.Instance.GetPlayer();
                 SpellUsedAction spellUsedAction = player.GetSpellUsedAction();
-                spellUsedAction.TakeAction(PlayerActionSystem.Instance.ClearBusy);
                 spellUsedAction.CastSpell(baseCard);
                 OnAnySpellButtonClicked?.Invoke(this, EventArgs.Empty);
             }

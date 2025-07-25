@@ -5,6 +5,7 @@ public class CombineAction : BaseAction
     [SerializeField] private GameObject combineSpellsMenu;
     [SerializeField] private GameObject buySpellsButton;
     [SerializeField] private GameObject playerActionSystemUI;
+    [SerializeField] private GameObject endTurnButton;
     protected override void Awake()
     {
         base.Awake();
@@ -16,11 +17,11 @@ public class CombineAction : BaseAction
         return "COMBINE";
     }
 
-    public override void TakeAction(Action onActionComplete)
+    public override void TakeAction()
     {
-        this.onActionComplete = onActionComplete;
         playerActionSystemUI.SetActive(false);
         buySpellsButton.SetActive(false);
+        endTurnButton.SetActive(false);
         combineSpellsMenu.SetActive(true);
     }
 }

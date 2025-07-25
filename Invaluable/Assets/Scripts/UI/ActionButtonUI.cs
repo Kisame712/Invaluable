@@ -19,8 +19,7 @@ public class ActionButtonUI : MonoBehaviour
         {
             if (baseAction != null)
             {
-                PlayerActionSystem.Instance.SetBusy();
-                baseAction.TakeAction(PlayerActionSystem.Instance.ClearBusy);
+                baseAction.TakeAction();
             }
         });
      

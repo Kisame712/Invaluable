@@ -1,10 +1,12 @@
 using UnityEngine;
 using System;
+using System.Collections;
 public class SpellUsedAction : BaseAction
 {
     [SerializeField] private GameObject spellMenu;
     [SerializeField] private GameObject buySpellsButton;
     [SerializeField] private GameObject playerActionSystemUI;
+    [SerializeField] private GameObject endTurnButton;
 
     protected override void Awake()
     {
@@ -17,24 +19,26 @@ public class SpellUsedAction : BaseAction
         return "SpellUsed";
     }
 
-    public override void TakeAction(Action onActionComplete)
+    public override void TakeAction()
     {
-        this.onActionComplete = onActionComplete;
+        return;
     }
 
     public void CastSpell(BaseCard baseCard)
     {
         PlayerCardManager.Instance.PlayerCardUsed(baseCard.cardName);
         spellMenu.SetActive(false);
-        player.PlaySpellAnimations(baseCard);
-        ResetUI();
+        player.PlaySpellAnimations(baseCard); 
+        PlayerActionSystem.Instance.ActionTaken();
+        StartCoroutine(ResetUI());
 
     }
 
-    private void ResetUI()
+    IEnumerator ResetUI()
     {
+        yield return new WaitForSeconds(1);
         buySpellsButton.SetActive(true);
         playerActionSystemUI.SetActive(true);
-        onActionComplete();
+        endTurnButton.SetActive(true);
     }
 }

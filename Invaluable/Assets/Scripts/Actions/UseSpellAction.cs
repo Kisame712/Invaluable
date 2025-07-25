@@ -5,6 +5,7 @@ public class UseSpellAction : BaseAction
     [SerializeField] private GameObject spellMenu;
     [SerializeField] private GameObject playerActionsUI;
     [SerializeField] private GameObject shopButton;
+    [SerializeField] private GameObject endTurnButton;
 
     protected override void Awake()
     {
@@ -17,11 +18,11 @@ public class UseSpellAction : BaseAction
         return "SPELL";
     }
 
-    public override void TakeAction(Action onActionComplete)
+    public override void TakeAction()
     {
-        this.onActionComplete = onActionComplete;
         playerActionsUI.SetActive(false);
         shopButton.SetActive(false);
+        endTurnButton.SetActive(false);
         spellMenu.SetActive(true);
     }
 
