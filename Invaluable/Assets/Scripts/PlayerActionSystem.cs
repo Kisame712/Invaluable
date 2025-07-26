@@ -49,4 +49,8 @@ public class PlayerActionSystem : MonoBehaviour
         UpdateActionPoints();
     }
 
+    public int GetActionPoints()
+    {
+        return remainingActionPoints;
+    }
 }

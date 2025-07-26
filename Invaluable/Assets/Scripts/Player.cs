@@ -2,12 +2,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [SerializeField] private Transform spawnPoint;
     private UseSpellAction useSpellAction;
     private SpellUsedAction spellUsedAction;
     private BaseAction[] baseActionArray;
     private Animator animator;
     private HealthSystem healthSystem;
-
+    
     private void Awake()
     {
         useSpellAction = GetComponent<UseSpellAction>();
@@ -67,6 +68,9 @@ public class Player : MonoBehaviour
                 animator.SetTrigger("Moist Shock");
                 break;
         }
- 
+
+        Enemy enemy = FindFirstObjectByType<Enemy>();
+
+        SpellEffectHandler.Instance.PlayLinkedAnimationEffects(baseCard.cardName, spawnPoint, enemy.transform);
     }
 }
