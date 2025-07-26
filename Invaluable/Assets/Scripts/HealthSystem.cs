@@ -17,13 +17,17 @@ public class HealthSystem : MonoBehaviour
         healthSlider.value = maxHealth;
     }
 
-    public void TakeDamage(int damageAmount)
+    public void TakeDamage(int damageAmount, bool isEnemy)
     {
         health -= damageAmount;
 
-        if(health <= 0)
+        if(health <= 0 && !isEnemy)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else if(health <= 0 && isEnemy)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         else
         {
