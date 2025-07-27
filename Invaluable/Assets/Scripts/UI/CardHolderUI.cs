@@ -2,9 +2,19 @@ using UnityEngine;
 using System;
 public class CardHolderUI : MonoBehaviour
 {
-    [SerializeField] private Transform cardHolderParent;
-    [SerializeField] private Transform cardUIPrefab;
+    public Transform cardHolderParent;
+    public Transform cardUIPrefab;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(cardUIPrefab);
+        DontDestroyOnLoad(cardHolderParent);
+    }
+    private void OnDestroy()
+    {
+        ShopCardUI.OnAnyButtonClicked -= ShopCardUI_OnAnyButtonClicked;
+        Enemy.OnEnemyTurnEnded -= Enemy_OnEnemyTurnEnded;
+    }
     private void Start()
     {
         SetBaseSpells();

@@ -93,7 +93,7 @@ Transform:
   m_GameObject: {fileID: 1228350880555282087}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 1.8, z: 0}
+  m_LocalPosition: {x: 1.68, y: 1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -318,6 +318,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   healthSlider: {fileID: 1730394996224734513}
+  bloodEffect: {fileID: 2783362765421578319, guid: 4f31abb7c0fadec4e8301be10ef386ff, type: 3}
 --- !u!95 &8226817001757041144
 Animator:
   serializedVersion: 7

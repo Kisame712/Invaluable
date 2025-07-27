@@ -5,6 +5,12 @@ public class PlayerActionSystemUI : MonoBehaviour
     [SerializeField] private Transform actionButtonContainer;
     [SerializeField] private Transform actionButtonPrefab;
 
+    private void OnDestroy()
+    {
+        PlayerActionSystem.Instance.OnActionPointsZero -= PlayerActionSystem_OnActionPointsZero;
+        Enemy.OnEnemyTurnEnded -= Enemy_OnEnemyTurnEnded;
+    }
+
     private void Start()
     {
         CreateActionButtons();

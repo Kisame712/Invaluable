@@ -494,7 +494,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -546,10 +546,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeSpeed: 0.02
   sentences:
-  - In a magical land far away, evil forces took over.
-  - Unleashing the most terrible magic, they quantified time itself..
-  - Time thus became a currency, an enemy ,a luxury only the evil had control over.
-  - After many years of torment, a hero was born...
+  - The hero defeats the last of the evil and time is free again!!
+  - Freeing time is both a blessing and a curse.
+  - For time became neutral for all, the rich lost and the poor gained.
+  - Free or bound, time remains an enemy, for one lifetime is never enough!
   textArea: {fileID: 1284037685}
   continueButton: {fileID: 1408014953}
   startGameButton: {fileID: 1464426669}
@@ -1011,7 +1011,7 @@ GameObject:
   - component: {fileID: 1464426672}
   - component: {fileID: 1464426671}
   m_Layer: 5
-  m_Name: Start Button
+  m_Name: Quit Game
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1104,7 +1104,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1276819360}
         m_TargetAssemblyTypeName: DialogManager, Assembly-CSharp
-        m_MethodName: LoadGameScene
+        m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1134,7 +1134,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: START
+  m_text: QUIT
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 107b158635db65c43baf34d67669fbaf, type: 2}
   m_sharedMaterial: {fileID: 4894997873562001002, guid: 107b158635db65c43baf34d67669fbaf, type: 2}

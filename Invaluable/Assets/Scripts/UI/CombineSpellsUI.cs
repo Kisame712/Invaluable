@@ -18,11 +18,22 @@ public class CombineSpellsUI : MonoBehaviour
 
     private void Awake()
     {
+
         selectedCards = new List<BaseCard>();
         combineButton.interactable = false;
         combineCondition.text = "";
+  
+        DontDestroyOnLoad(spellUIPrefab);
+        DontDestroyOnLoad(spellCardHolder);
+
     }
 
+    private void OnDestroy()
+    {
+        ShopCardUI.OnAnyButtonClicked -= ShopCardUI_OnAnyButtonClicked;
+        CombineSpellCardUI.OnAnyCombineSpellButtonClicked -= CombineSpellCardUI_OnAnySpellButtonClicked;
+        SpellCardUI.OnAnySpellButtonClicked -= SpellCardUI_OnAnySpellButtonClicked;
+    }
     private void Start()
     {
         ShopCardUI.OnAnyButtonClicked += ShopCardUI_OnAnyButtonClicked;

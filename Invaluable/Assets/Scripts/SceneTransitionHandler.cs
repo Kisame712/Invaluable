@@ -23,23 +23,24 @@ public class SceneTransitionHandler : MonoBehaviour
         Instance = this;
     }
 
-    public void SceneExit(Transform spawnPosition)
+    public void SceneExit(Transform spawnPosition, GameObject gameObject1)
     {
         
-        StartCoroutine(DisplayVictoryBanner(spawnPosition));
+        StartCoroutine(DisplayVictoryBanner(spawnPosition, gameObject1));
     }
 
-    IEnumerator DisplayVictoryBanner(Transform spawnPosition)
+    IEnumerator DisplayVictoryBanner(Transform spawnPosition, GameObject gameObject1)
     {
-        Instantiate(bloodEffect, spawnPosition.position, Quaternion.identity);
+        enemyDefeatedBanner.SetActive(true);
         yield return new WaitForSeconds(0.1f);
+        Instantiate(bloodEffect, spawnPosition.position, Quaternion.identity);
+        Destroy(gameObject1);
         playerActionsUI.SetActive(false);
         buySpellsButton.SetActive(false);
         nextTurnButton.SetActive(false);
         timeSlotIcon.SetActive(false);
         timeSlotText.SetActive(false);
-        enemyDefeatedBanner.SetActive(true);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }
