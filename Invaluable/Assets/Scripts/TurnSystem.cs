@@ -21,7 +21,10 @@ public class TurnSystem : MonoBehaviour
 
         Instance = this;
     }
-
+    private void OnDestroy()
+    {
+        Enemy.OnEnemyTurnEnded -= Enemy_OnEnemyTurnEnded;
+    }
     private void Start()
     {
         Enemy.OnEnemyTurnEnded += Enemy_OnEnemyTurnEnded;

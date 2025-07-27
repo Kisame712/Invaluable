@@ -22,6 +22,14 @@ public class TimeSlotManager : MonoBehaviour
         Instance = this;
     }
 
+    private void OnDestroy()
+    {
+        ShopCardUI.OnAnyButtonClicked -= ShopCardUI_OnAnyButtonClicked;
+
+        Enemy.OnEnemyTurnEnded -= Enemy_OnEnemyTurnEnded;
+
+    }
+
     private void Start()
     {
         UpdatePlayerTimeSlots();

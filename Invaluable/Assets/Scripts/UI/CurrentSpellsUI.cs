@@ -4,8 +4,24 @@ using System;
 
 public class CurrentSpellsUI : MonoBehaviour
 {
+
     [SerializeField] private Transform spellCardHolder;
     [SerializeField] private Transform spellUIPrefab;
+
+    private void Awake()
+    {
+        
+        DontDestroyOnLoad(spellCardHolder);
+        DontDestroyOnLoad(spellUIPrefab);
+    }
+
+    private void OnDestroy()
+    {
+        ShopCardUI.OnAnyButtonClicked -= ShopCardUI_OnAnyButtonClicked;
+        SpellCardUI.OnAnySpellButtonClicked -= SpellCardUI_OnAnySpellButtonClicked;
+        CombineSpellsUI.OnCombineSpell -= CombineSpellsUI_OnCombineSpell;
+
+    }
 
     private void Start()
     {

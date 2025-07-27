@@ -164,8 +164,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initalCards:
-  - {fileID: 11400000, guid: 8d7322bebfca0fd4cb408a1cc9cfd9a7, type: 2}
-  - {fileID: 11400000, guid: 5eb6bfa3e2acacf428c0d139a2d65700, type: 2}
+  - {fileID: 11400000, guid: c891c33075e26ff41a7a63c7e330a48d, type: 2}
+  - {fileID: 11400000, guid: b448a3af46929b04c8019121ae6656e8, type: 2}
   initialCardCounts: 2
 --- !u!1 &25807175
 GameObject:
@@ -1271,7 +1271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1937776820}
-  remainingActionPoints: 5
+  remainingActionPoints: 4
   actionPointsText: {fileID: 1529615538}
 --- !u!1 &436469153
 GameObject:
@@ -1973,7 +1973,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -3343,11 +3343,11 @@ PrefabInstance:
     - target: {fileID: 7755659292792357126, guid: 18cb04f477d70294181f96de4070469f, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: f48fe33b1d51e3145b1879c174fbf193, type: 3}
+      objectReference: {fileID: 8300000, guid: 56082448c6428f547890364693c7efc5, type: 3}
     - target: {fileID: 7755659292792357126, guid: 18cb04f477d70294181f96de4070469f, type: 3}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: f48fe33b1d51e3145b1879c174fbf193, type: 3}
+      objectReference: {fileID: 8300000, guid: 56082448c6428f547890364693c7efc5, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5121,8 +5121,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeSlotsDisplay: {fileID: 1641509050}
-  playerTimeSlots: 30
-  timeSlotsPerTurn: 20
+  playerTimeSlots: 20
+  timeSlotsPerTurn: 15
 --- !u!4 &1822554142
 Transform:
   m_ObjectHideFlags: 0
@@ -5790,7 +5790,7 @@ SpriteRenderer:
   m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: -7179448904824878866, guid: aefa4887ffb8f9e44b97ec12dc7412c7, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7433963, g: 0.54281956, b: 0.54281956, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5995,10 +5995,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 565357150281292748, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5320754
+      objectReference: {fileID: 0}
+    - target: {fileID: 565357150281292748, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.46908864
+      objectReference: {fileID: 0}
+    - target: {fileID: 565357150281292748, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.40056244
+      objectReference: {fileID: 0}
     - target: {fileID: 912986541790540033, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 662530522}
+    - target: {fileID: 1776739744688771460, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5320754
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776739744688771460, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: m_Color.g
+      value: 0.46908864
+      objectReference: {fileID: 0}
+    - target: {fileID: 1776739744688771460, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: m_Color.r
+      value: 0.40056244
+      objectReference: {fileID: 0}
+    - target: {fileID: 2093021010375063513, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: health
+      value: 80
+      objectReference: {fileID: 0}
     - target: {fileID: 2093021010375063513, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
       propertyPath: bloodEffect
       value: 
@@ -6061,16 +6089,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4920079526744231040, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
       propertyPath: enemyCards.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4920079526744231040, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
       propertyPath: 'enemyCards.Array.data[0]'
       value: 
-      objectReference: {fileID: 11400000, guid: 8d7322bebfca0fd4cb408a1cc9cfd9a7, type: 2}
+      objectReference: {fileID: 11400000, guid: 3d0a22d569e5144438dd07e0939f1cbd, type: 2}
     - target: {fileID: 4920079526744231040, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
       propertyPath: 'enemyCards.Array.data[1]'
       value: 
-      objectReference: {fileID: 11400000, guid: 8d7322bebfca0fd4cb408a1cc9cfd9a7, type: 2}
+      objectReference: {fileID: 11400000, guid: b448a3af46929b04c8019121ae6656e8, type: 2}
     - target: {fileID: 6945511029397627574, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

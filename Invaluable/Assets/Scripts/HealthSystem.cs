@@ -30,8 +30,7 @@ public class HealthSystem : MonoBehaviour
         }
         else if(health <= 0 && isEnemy)
         {
-            SceneTransitionHandler.Instance.SceneExit(transform);
-            Destroy(gameObject);
+            SceneTransitionHandler.Instance.SceneExit(transform, gameObject);
         }
     }
 
