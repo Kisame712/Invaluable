@@ -68,7 +68,10 @@ public class Player : MonoBehaviour
                 animator.SetTrigger("Moist Shock");
                 break;
         }
+    }
 
+    public void AnimatorEffects(BaseCard baseCard)
+    {
         Enemy enemy = FindFirstObjectByType<Enemy>();
 
         SpellEffectHandler.Instance.PlayLinkedAnimationEffects(baseCard.cardName, spawnPoint, enemy.transform);

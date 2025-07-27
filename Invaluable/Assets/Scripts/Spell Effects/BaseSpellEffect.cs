@@ -1,15 +1,10 @@
 using UnityEngine;
 
-public abstract class BaseSpellEffect : MonoBehaviour
+public class BaseSpellEffect : MonoBehaviour
 {
     [SerializeField] protected float speed;
     [SerializeField] protected int damageAmount;
     protected Transform targetPosition;
-
-    protected void Awake()
-    {
-        targetPosition.position = transform.position;
-    }
 
     protected void Update()
     {
@@ -21,14 +16,18 @@ public abstract class BaseSpellEffect : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
+            Destroy(gameObject);
             Enemy enemy = collision.GetComponent<Enemy>();
             HealthSystem healthSystem = enemy.GetComponent<HealthSystem>();
             healthSystem.TakeDamage(damageAmount, true);
+            Animator cameraAnim = Camera.main.GetComponent<Animator>();
+            cameraAnim.SetTrigger("shake");
 
 
         }
         else if (collision.tag == "Player")
         {
+            Destroy(gameObject);
             Player player = collision.GetComponent<Player>();
             HealthSystem healthSystem = player.GetHealthSystem();
             healthSystem.TakeDamage(damageAmount, false);

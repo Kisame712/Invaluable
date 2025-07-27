@@ -1865,7 +1865,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 662530520}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 11e5b3f95685d734fb072fd689bbd44d, type: 2}
   m_CullingMode: 0
@@ -2363,6 +2363,13 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3d0a22d569e5144438dd07e0939f1cbd, type: 2}
   allCardEffects:
   - {fileID: 2892571168257549525, guid: 7e1d687b4efebf94aa15b6b640b2f134, type: 3}
+  - {fileID: 69444659679994127, guid: 08467f1d76e61cc45b44430341d3559d, type: 3}
+  - {fileID: 8950552895580353004, guid: c1c69a50cbbddee4d95da6d0987b4789, type: 3}
+  - {fileID: 3117101223449074484, guid: 6fa4d733282f1b34c9a4f4be8435bf18, type: 3}
+  - {fileID: 1223192715498257824, guid: c7481997c9c951c489bb4cd5bbc9e6e8, type: 3}
+  - {fileID: 1761269839625567321, guid: 5470e20ab942d774e878ac9039e23dc6, type: 3}
+  - {fileID: 7279827336852460580, guid: 23b330dc464e6594e81e82089e0462b9, type: 3}
+  - {fileID: 6914110389373879655, guid: 230bbc07b5aebec4a8092462c9924da0, type: 3}
 --- !u!4 &952068093
 Transform:
   m_ObjectHideFlags: 0
@@ -4596,7 +4603,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -19.400024, y: -17.799988}
+  m_AnchoredPosition: {x: -19.400146, y: -17.800049}
   m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &1716750000
@@ -5831,6 +5838,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4134541296234993482, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: m_Value
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 4134541296234993482, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: m_MaxValue
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4207362830440295808, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
       propertyPath: m_Name
       value: Enemy
@@ -5939,6 +5954,10 @@ PrefabInstance:
     - target: {fileID: 5334461504322982796, guid: 9fa54de36eeb530488fa168ba438b16c, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6792942382652175418, guid: 9fa54de36eeb530488fa168ba438b16c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.68
       objectReference: {fileID: 0}
     - target: {fileID: 7156128350058657790, guid: 9fa54de36eeb530488fa168ba438b16c, type: 3}
       propertyPath: endTurnButton
