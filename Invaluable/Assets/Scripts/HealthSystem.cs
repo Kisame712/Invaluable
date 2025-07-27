@@ -20,6 +20,7 @@ public class HealthSystem : MonoBehaviour
     public void TakeDamage(int damageAmount, bool isEnemy)
     {
         health -= damageAmount;
+        ChangeUI();
 
         if(health <= 0 && !isEnemy)
         {
@@ -28,10 +29,6 @@ public class HealthSystem : MonoBehaviour
         else if(health <= 0 && isEnemy)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-        }
-        else
-        {
-            ChangeUI();
         }
     }
 
