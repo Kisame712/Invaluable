@@ -1271,7 +1271,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1937776820}
-  remainingActionPoints: 3
+  remainingActionPoints: 5
   actionPointsText: {fileID: 1529615538}
 --- !u!1 &436469153
 GameObject:
@@ -2997,41 +2997,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1136423072}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
+      - m_Target: {fileID: 670453918}
+        m_TargetAssemblyTypeName: TurnSystem, Assembly-CSharp
+        m_MethodName: PlayerTurnEnded
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 603877917}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1870590679}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1136423077
 MonoBehaviour:
@@ -4921,7 +4897,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeSlotsDisplay: {fileID: 1641509050}
-  playerTimeSlots: 10
+  playerTimeSlots: 30
+  timeSlotsPerTurn: 20
 --- !u!4 &1822554142
 Transform:
   m_ObjectHideFlags: 0
@@ -5850,6 +5827,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 4920079526744231040, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: enemyAttacksPerTurn
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920079526744231040, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: enemyCards.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4920079526744231040, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: 'enemyCards.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d7322bebfca0fd4cb408a1cc9cfd9a7, type: 2}
+    - target: {fileID: 4920079526744231040, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
+      propertyPath: 'enemyCards.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 8d7322bebfca0fd4cb408a1cc9cfd9a7, type: 2}
     - target: {fileID: 6945511029397627574, guid: af1541c294502ee48ad919dff4dec67e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

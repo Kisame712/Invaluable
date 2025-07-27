@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using System;
 public class PlayerActionSystem : MonoBehaviour
 {
     public static PlayerActionSystem Instance { private set; get; }
@@ -7,6 +8,7 @@ public class PlayerActionSystem : MonoBehaviour
     [SerializeField] private Player player;
     [SerializeField] private int remainingActionPoints;
     [SerializeField] private TMP_Text actionPointsText;
+    public event EventHandler OnActionPointsZero;
     private int maxActionPoints;
 
     private void Awake()
@@ -40,6 +42,11 @@ public class PlayerActionSystem : MonoBehaviour
     public void ActionTaken()
     {
         remainingActionPoints--;
+        if(remainingActionPoints <= 0)
+        {
+            remainingActionPoints = 0;
+            OnActionPointsZero?.Invoke(this, EventArgs.Empty);
+        }
         UpdateActionPoints();
     }
 

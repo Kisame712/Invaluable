@@ -4,6 +4,7 @@ public class BaseSpellEffect : MonoBehaviour
 {
     [SerializeField] protected float speed;
     [SerializeField] protected int damageAmount;
+    [SerializeField] private GameObject bloodEffect;
     protected Transform targetPosition;
 
     protected void Update()
@@ -17,6 +18,7 @@ public class BaseSpellEffect : MonoBehaviour
         if (collision.tag == "Enemy")
         {
             Destroy(gameObject);
+            Instantiate(bloodEffect, collision.transform.position, Quaternion.identity);
             Enemy enemy = collision.GetComponent<Enemy>();
             HealthSystem healthSystem = enemy.GetComponent<HealthSystem>();
             healthSystem.TakeDamage(damageAmount, true);
@@ -28,9 +30,12 @@ public class BaseSpellEffect : MonoBehaviour
         else if (collision.tag == "Player")
         {
             Destroy(gameObject);
+            Instantiate(bloodEffect, collision.transform.position, Quaternion.identity);
             Player player = collision.GetComponent<Player>();
             HealthSystem healthSystem = player.GetHealthSystem();
             healthSystem.TakeDamage(damageAmount, false);
+            Animator cameraAnim = Camera.main.GetComponent<Animator>();
+            cameraAnim.SetTrigger("shake");
 
         }
     }
@@ -45,6 +50,6 @@ public class BaseSpellEffect : MonoBehaviour
             scale = -1;
         }
         this.targetPosition = targetPosition;
-        this.targetPosition.localScale = new Vector3(scale, this.targetPosition.localScale.y, this.targetPosition.localScale.z); 
+        transform.localScale = new Vector3(scale, transform.localScale.y, transform.localScale.z); 
     }
 }

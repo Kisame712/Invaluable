@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System;
 public class PlayerActionSystemUI : MonoBehaviour
 {
     [SerializeField] private Transform actionButtonContainer;
@@ -8,6 +8,9 @@ public class PlayerActionSystemUI : MonoBehaviour
     private void Start()
     {
         CreateActionButtons();
+
+        PlayerActionSystem.Instance.OnActionPointsZero += PlayerActionSystem_OnActionPointsZero;
+        Enemy.OnEnemyTurnEnded += Enemy_OnEnemyTurnEnded;
     }
 
     private void CreateActionButtons()
@@ -26,4 +29,21 @@ public class PlayerActionSystemUI : MonoBehaviour
         }
     }
 
+
+    private void PlayerActionSystem_OnActionPointsZero(object sender, EventArgs e)
+    {
+        foreach (Transform actionButton in actionButtonContainer)
+        {
+            Destroy(actionButton.gameObject);
+        }
+    }
+
+    private void Enemy_OnEnemyTurnEnded(object sender, EventArgs e)
+    {
+        foreach (Transform actionButton in actionButtonContainer)
+        {
+            Destroy(actionButton.gameObject);
+        }
+        CreateActionButtons();
+    }
 }

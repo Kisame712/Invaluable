@@ -41,7 +41,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5485121500855894315}
   serializedVersion: 8
-  lengthInSec: 0.3
+  lengthInSec: 1
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -603,7 +603,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    gravitySource: 0
+    gravitySource: 1
     maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
@@ -4842,6 +4842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7369833700366929768}
+  - component: {fileID: 5804049110800059890}
   - component: {fileID: 6840194040520961117}
   - component: {fileID: 8839619247153302380}
   - component: {fileID: 4445084354244371993}
@@ -4868,6 +4869,21 @@ Transform:
   - {fileID: 1151368634705403156}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5804049110800059890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8950552895580353004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c3b029c4dac3742a0634a2b68fd951, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 15
+  damageAmount: 12
+  bloodEffect: {fileID: 2783362765421578319, guid: 4f31abb7c0fadec4e8301be10ef386ff, type: 3}
 --- !u!61 &6840194040520961117
 BoxCollider2D:
   m_ObjectHideFlags: 0
