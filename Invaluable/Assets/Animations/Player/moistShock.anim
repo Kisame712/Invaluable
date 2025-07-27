@@ -910,7 +910,7 @@ AnimationClip:
   - time: 0.083333336
     functionName: AnimatorEffects
     data: 
-    objectReferenceParameter: {fileID: 11400000, guid: 5eb6bfa3e2acacf428c0d139a2d65700, type: 2}
+    objectReferenceParameter: {fileID: 11400000, guid: db9777a813129e642967fa87c23a5e9c, type: 2}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

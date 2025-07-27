@@ -9,6 +9,8 @@ public class TimeSlotManager : MonoBehaviour
 
     [SerializeField] private int playerTimeSlots;
 
+    [SerializeField] private int timeSlotsPerTurn;
+
     private void Awake()
     {
         if (Instance != null)
@@ -25,6 +27,8 @@ public class TimeSlotManager : MonoBehaviour
         UpdatePlayerTimeSlots();
 
         ShopCardUI.OnAnyButtonClicked += ShopCardUI_OnAnyButtonClicked;
+
+        Enemy.OnEnemyTurnEnded += Enemy_OnEnemyTurnEnded;
     }
 
     private void UpdatePlayerTimeSlots()
@@ -55,4 +59,13 @@ public class TimeSlotManager : MonoBehaviour
         UpdatePlayerTimeSlots();
     }
 
+    private void Enemy_OnEnemyTurnEnded(object sender, EventArgs e)
+    {
+        UpdatePlayerTimeSlots();
+    }
+
+    public void AddTimeAfterTurnEnds()
+    {
+        playerTimeSlots += timeSlotsPerTurn;
+    }
 }

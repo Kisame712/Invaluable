@@ -8,33 +8,32 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int enemyAttacksPerTurn;
     [SerializeField] private Transform spellSpawnPoint;
 
-    private HealthSystem healthSystem;
     private Animator animator;
     public static event EventHandler OnEnemyTurnEnded;
 
     private void Awake()
     {
-        
-        healthSystem = GetComponent<HealthSystem>();
         animator = GetComponent<Animator>();
     }
 
     public void EnemyTurn()
     {
-        for(int i = 0; i<enemyAttacksPerTurn; i++)
-        {
-            BaseCard randomCard =  enemyCards[UnityEngine.Random.Range(0, enemyCards.Count)];
-            StartCoroutine(SingleAction(randomCard));
-        }
-        
+   
+        StartCoroutine(SingleAction());
+    
     }
 
-    IEnumerator SingleAction(BaseCard baseCard)
+    IEnumerator SingleAction()
     {
-        Player player = PlayerActionSystem.Instance.GetPlayer();
-        animator.SetTrigger("attack");
-        SpellEffectHandler.Instance.PlayLinkedAnimationEffects(baseCard.cardName, spellSpawnPoint, player.transform);
-        yield return new WaitForSeconds(1);
+        for(int i=0; i<enemyAttacksPerTurn; i++)
+        {
+            BaseCard baseCard = enemyCards[UnityEngine.Random.Range(0, enemyCards.Count)];
+            Player player = PlayerActionSystem.Instance.GetPlayer();
+            animator.SetTrigger("attack");
+            SpellEffectHandler.Instance.PlayLinkedAnimationEffects(baseCard.cardName, spellSpawnPoint, player.transform);
+            yield return new WaitForSeconds(1);
+        }
+        OnEnemyTurnEnded?.Invoke(this, EventArgs.Empty);
     }
 
 }

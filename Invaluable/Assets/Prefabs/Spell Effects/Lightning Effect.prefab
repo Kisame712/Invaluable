@@ -62,8 +62,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93c3b029c4dac3742a0634a2b68fd951, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 15
   damageAmount: 6
+  bloodEffect: {fileID: 2783362765421578319, guid: 4f31abb7c0fadec4e8301be10ef386ff, type: 3}
 --- !u!82 &8481188854892350505
 AudioSource:
   m_ObjectHideFlags: 0
