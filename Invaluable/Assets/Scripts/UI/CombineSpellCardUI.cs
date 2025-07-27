@@ -7,7 +7,7 @@ public class CombineSpellCardUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text cardNameUI;
     [SerializeField] private TMP_Text cardCountUI;
-
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private Button button;
 
     private BaseCard baseCard;
@@ -27,6 +27,7 @@ public class CombineSpellCardUI : MonoBehaviour
         {
             if (baseCard != null)
             {
+                audioSource.Play();
                 OnAnyCombineSpellButtonClicked?.Invoke(this, baseCard);
             }
 

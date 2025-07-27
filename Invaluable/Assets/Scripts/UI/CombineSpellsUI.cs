@@ -27,7 +27,7 @@ public class CombineSpellsUI : MonoBehaviour
     {
         ShopCardUI.OnAnyButtonClicked += ShopCardUI_OnAnyButtonClicked;
         CombineSpellCardUI.OnAnyCombineSpellButtonClicked += CombineSpellCardUI_OnAnySpellButtonClicked;
-
+        SpellCardUI.OnAnySpellButtonClicked += SpellCardUI_OnAnySpellButtonClicked;
         UpdateCurrentPlayerCards();
     }
 
@@ -49,6 +49,12 @@ public class CombineSpellsUI : MonoBehaviour
     }
 
     private void ShopCardUI_OnAnyButtonClicked(object sender, EventArgs e)
+    {
+        ClearCards();
+        UpdateCurrentPlayerCards();
+    }
+
+    private void SpellCardUI_OnAnySpellButtonClicked(object sender, EventArgs e)
     {
         ClearCards();
         UpdateCurrentPlayerCards();

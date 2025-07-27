@@ -6,6 +6,7 @@ public class ShopCardUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text cardNameUI;
     [SerializeField] private TMP_Text cardCostUI;
+    [SerializeField] private AudioSource audioSource;
     public static event EventHandler OnAnyButtonClicked;
     private BaseCard baseCard;
     private Button button;
@@ -53,6 +54,7 @@ public class ShopCardUI : MonoBehaviour
     {
         if (baseCard != null && TimeSlotManager.Instance.CanBuyCard(baseCard))
         {
+            audioSource.Play();
             PlayerCardManager.Instance.AddPlayerCard(baseCard.cardName);
             TimeSlotManager.Instance.BoughtCard(baseCard.cardCost);
             OnAnyButtonClicked?.Invoke(this, EventArgs.Empty);
