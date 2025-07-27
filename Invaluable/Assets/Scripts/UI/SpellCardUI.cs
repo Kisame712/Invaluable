@@ -9,7 +9,7 @@ public class SpellCardUI : MonoBehaviour
     [SerializeField] private TMP_Text cardNameUI;
     [SerializeField] private TMP_Text cardDamageUI;
     [SerializeField] private TMP_Text cardCountUI;
-
+    [SerializeField] private AudioSource audioSource;
     [SerializeField] private Button button;
 
     private BaseCard baseCard;
@@ -30,6 +30,7 @@ public class SpellCardUI : MonoBehaviour
         {
             if (baseCard != null)
             {
+                audioSource.Play();
                 Player player = PlayerActionSystem.Instance.GetPlayer();
                 SpellUsedAction spellUsedAction = player.GetSpellUsedAction();
                 spellUsedAction.CastSpell(baseCard);

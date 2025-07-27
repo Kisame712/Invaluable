@@ -10,6 +10,7 @@ public class CardHolderUI : MonoBehaviour
         SetBaseSpells();
 
         ShopCardUI.OnAnyButtonClicked += ShopCardUI_OnAnyButtonClicked;
+        Enemy.OnEnemyTurnEnded += Enemy_OnEnemyTurnEnded;
     }
 
     private void SetBaseSpells()
@@ -39,5 +40,10 @@ public class CardHolderUI : MonoBehaviour
             ShopCardUI shopCard = buttonTransform.GetComponent<ShopCardUI>();
             shopCard.SetButtonStatus();
         }
+    }
+
+    private void Enemy_OnEnemyTurnEnded(object sender, EventArgs e)
+    {
+        ChangeShopButtonStatus();
     }
 }

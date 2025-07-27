@@ -5,6 +5,7 @@ public class ActionButtonUI : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI actionName;
     [SerializeField] private Button button;
+    [SerializeField] private AudioSource audioSource;
     private BaseAction baseAction;
 
     public void SetActionName(BaseAction baseAction)
@@ -19,6 +20,7 @@ public class ActionButtonUI : MonoBehaviour
         {
             if (baseAction != null)
             {
+                audioSource.Play();
                 baseAction.TakeAction();
             }
         });

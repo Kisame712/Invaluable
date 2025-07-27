@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -7,6 +8,7 @@ public class HealthSystem : MonoBehaviour
     [SerializeField] private int health;
     [SerializeField] private Slider healthSlider;
 
+    [SerializeField] private GameObject bloodEffect;
     private int maxHealth;
 
     private void Awake()
@@ -28,7 +30,8 @@ public class HealthSystem : MonoBehaviour
         }
         else if(health <= 0 && isEnemy)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneTransitionHandler.Instance.SceneExit(transform);
+            Destroy(gameObject);
         }
     }
 
@@ -47,5 +50,5 @@ public class HealthSystem : MonoBehaviour
         ChangeUI();
     }
 
-
+    
 }
